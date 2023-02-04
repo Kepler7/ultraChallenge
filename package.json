@@ -1,0 +1,21 @@
+{
+  "name": "ultrachallenge",
+  "version": "1.0.0",
+  "description": "ultra",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kepler7/ultraChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kepler7/ultraChallenge/issues"
+  },
+  "homepage": "https://github.com/Kepler7/ultraChallenge#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  }
+}
