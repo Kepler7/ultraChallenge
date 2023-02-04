@@ -1,3 +1,5 @@
+const {Utils} = require('../utils/Utils')
+
 class ProductsPage{
     
     constructor(page){
@@ -28,6 +30,28 @@ class ProductsPage{
 
     getProductsNames(){
         return this.productsNames
+    }
+
+    async addCertainNumberOfProductsToCartRamdomly(quantity){
+        const utils = new Utils(this.page)
+        const productNames = this.getProductsNames()
+        var count  = await productNames.count()
+        var productNamesArray = []
+        for (var p = 0; p < count; p++){
+            productNamesArray.push(await productNames.nth(p).textContent())
+        }
+        if(quantity > count){
+            throw Error(`${quantity} Items you want to add however there are only ${count} available`)
+        }
+        else{
+            for(var q = 1; q <= quantity; q++){
+                let randomProduct = utils.getRandomItem(productNamesArray)
+                await new Promise(r => setTimeout(r, 1000));
+                await this.addToCartProductByName(randomProduct)
+                let index = productNamesArray.indexOf(randomProduct)
+                productNamesArray.splice(index, 1)
+            }
+        }
     }
 
     
