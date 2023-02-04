@@ -1,37 +1,36 @@
-name: Ultra
+name: ultra
+
 on:
-  #schedule:
-   # - cron: "00 14 * * 1-5"
-  push:
-      branches: 
-        - main
   workflow_dispatch:
+
 jobs:
-  test:
-    timeout-minutes: 60
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: 16
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
+        node-version: '14'
+        cache: 'npm'
+    - run: npm ci
+    - run: npx playwright install --with-deps
+    # - run: sudo apt-add-repository ppa:qameta/allure
     - run: wget https://github.com/allure-framework/allure2/releases/download/2.18.1/allure_2.18.1-1_all.deb 
     - run: sudo dpkg -i allure_2.18.1-1_all.deb
     - run: npx playwright test --config=playwright.config.js --reporter=line,allure-playwright
       env:
           NOWSTA_USER: ${{ secrets.ULTRA_USER }}
           NOWSTA_PASSWORD: ${{ secrets.ULTRA_PASSWORD }}
-    - uses: actions/upload-artifact@v3
-      if: always()
+          NOWSTA_COORDINATORS_TOKEN: ${{ secrets.NOWSTA_COORDINATORS_TOKEN }}
+    - uses: actions/upload-artifact@master
       with:
         name: allure-results
         path: allure-results
         retention-days: 20
+        
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
