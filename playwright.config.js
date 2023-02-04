@@ -52,7 +52,7 @@ const config = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        headless: false,
+        headless: true,
         screenshot: 'on',
         trace: 'on-first-retry',
         viewport: {width:1200,height:1200}
