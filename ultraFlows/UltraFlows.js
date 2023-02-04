@@ -1,5 +1,6 @@
-const {expect} = require('@playwright/test')
+const {expect, test} = require('@playwright/test')
 const{POManager} = require('../pageObjects/POManager')
+const { Utils } = require('../utils/Utils')
 const dataSet = JSON.parse(JSON.stringify(require('../data/loginCredentialsData.json')))
 
 class UltraFlows{
@@ -12,8 +13,7 @@ class UltraFlows{
         [
             page.waitForNavigation(), 
             await loginPage.validLogin(dataSet[0].username, dataSet[0].password)
-        ])
-        
+        ])   
     }
 }
 
