@@ -12,3 +12,5 @@ class POManager{
         return this.loginPage;
     }
 }
+
+module.exports = {POManager}

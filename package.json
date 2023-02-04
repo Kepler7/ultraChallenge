@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "ultra",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ultra": "npx playwright test  --reporter=line,allure-playwright --config=playwright.config.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kepler7/ultraChallenge.git"
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/Kepler7/ultraChallenge#readme",
   "devDependencies": {
-    "@playwright/test": "^1.30.0"
+    "@playwright/test": "^1.30.0",
+    "allure-playwright": "^2.0.0-beta.25"
   }
 }
