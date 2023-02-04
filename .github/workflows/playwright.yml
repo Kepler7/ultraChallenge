@@ -22,9 +22,8 @@ jobs:
     - run: sudo dpkg -i allure_2.18.1-1_all.deb
     - run: npx playwright test --config=playwright.config.js --reporter=line,allure-playwright
       env:
-          NOWSTA_USER: ${{ secrets.ULTRA_USER }}
-          NOWSTA_PASSWORD: ${{ secrets.ULTRA_PASSWORD }}
-          NOWSTA_COORDINATORS_TOKEN: ${{ secrets.NOWSTA_COORDINATORS_TOKEN }}
+          ULTRA_USER: ${{ secrets.ULTRA_USER }}
+          ULTRA_PASSWORD: ${{ secrets.ULTRA_PASSWORD }}
     - uses: actions/upload-artifact@master
       with:
         name: allure-results
