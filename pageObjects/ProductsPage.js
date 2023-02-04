@@ -5,7 +5,7 @@ class ProductsPage{
     constructor(page){
         this.page = page
         this.productsNames = page.locator('.inventory_item_name')
-       
+        this.cartIcon = page.locator('#shopping_cart_container')
     }
 
     async addToCartProductByName(name){
@@ -40,6 +40,7 @@ class ProductsPage{
         for (var p = 0; p < count; p++){
             productNamesArray.push(await productNames.nth(p).textContent())
         }
+        await new Promise(r => setTimeout(r, 1000));
         if(quantity > count){
             throw Error(`${quantity} Items you want to add however there are only ${count} available`)
         }
@@ -54,6 +55,9 @@ class ProductsPage{
         }
     }
 
+    getCartIcon(){
+        return this.cartIcon
+    }
     
 }
 
