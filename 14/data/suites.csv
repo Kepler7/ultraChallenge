@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Sun Feb 05 05:44:59 GMT 2023","Sun Feb 05 05:45:30 GMT 2023","30935","chromium","ultra.spec.js","ultra purchase flow end2end test","","","02 purchase more than one product",""
+"broken","Sun Feb 05 05:43:56 GMT 2023","Sun Feb 05 05:44:27 GMT 2023","30974","chromium","ultra.spec.js","ultra purchase flow end2end test","","","01 purchase single product",""

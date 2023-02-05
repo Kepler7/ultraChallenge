@@ -1,0 +1,1 @@
+[{"uid":"a879c04a1fd8a3ba","name":"01 purchase single product","time":{"start":1675575836971,"stop":1675575867945,"duration":30974},"status":"broken","severity":"normal"},{"uid":"1b6827a1f503bee3","name":"02 purchase more than one product","time":{"start":1675575899780,"stop":1675575930715,"duration":30935},"status":"broken","severity":"normal"}]
