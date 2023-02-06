@@ -12,7 +12,7 @@ End to End testing suite template using:
 2. Check out the test by running the `ultra` command
 3. After execution create allure report(locally) using `allure generate ./allure-results --clean`
 4. Now open report: `allure open ./allure-report`
-5. Have fun building something!
+5. Have fun building something! to run test cases do: `npm run ultra`
 
 ## 📁 Structure
 
