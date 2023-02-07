@@ -13,6 +13,7 @@ End to End testing suite template using:
 3. After execution create allure report(locally) using `allure generate ./allure-results --clean`
 4. Now open report: `allure open ./allure-report`
 5. Have fun building something! to run test cases do: `npm run ultra`
+6. Before running your test cases locally you need to add you credentials in the loginCredentialsData.json
 
 ## 📁 Structure
 
