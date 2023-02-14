@@ -5,14 +5,21 @@ on:
       - main
   pull_request:
   workflow_dispatch:
+    inputs:
+      job_name:
+        description: 'Job to be run'
+        default: 'commerce'
+        required: true
 jobs:
   commerce:
+    if: github.event.inputs.job_name == 'commerce'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Commerce
     steps:
         - run: echo $(date +%Y)
   cinnamon:
+    if: github.event.inputs.job_name == 'cinnamon'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Cinnamon
