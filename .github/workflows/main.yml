@@ -1,0 +1,20 @@
+name: Main
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+  workflow_dispatch:
+jobs:
+  commerce:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    name: Commerce
+    steps:
+        - run: echo $(date +%Y)
+  cinnamon:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    name: Cinnamon
+    steps:
+        - run: echo $(date +%Y)
