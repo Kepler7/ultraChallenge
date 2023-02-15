@@ -13,7 +13,7 @@ on:
 jobs:
   commerce:
     env:
-      GITHUB_BRANCH: ${{ env.GITHUB_HEAD_REF }}
+      GITHUB_BRANCH: ${{ GITHUB_HEAD_REF }}
     if: github.event.inputs.job_name == 'commerce' || contains(${{GITHUB_BRANCH}}, 'commerce')
     timeout-minutes: 60
     runs-on: ubuntu-latest
