@@ -18,6 +18,7 @@ jobs:
     name: Commerce
     steps:
         - run: echo $(date +%Y)
+        - run: echo ${{ github.ref }}
   cinnamon:
     if: github.event.inputs.job_name == 'cinnamon' || contains(${{ github.ref }}, 'cinnamon')
     timeout-minutes: 60
@@ -25,3 +26,4 @@ jobs:
     name: Cinnamon
     steps:
         - run: echo $(date +%Y)
+        - run: echo ${{ github.ref }}
