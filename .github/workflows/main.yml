@@ -12,7 +12,7 @@ on:
         required: true
 jobs:
   commerce:
-    if: github.event.inputs.job_name == 'commerce' || contains(${{ github.ref }}, 'commerce')
+    if: github.event.inputs.job_name == 'commerce'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Commerce
@@ -20,7 +20,7 @@ jobs:
         - run: echo $(date +%Y)
         - run: echo ${{ github.ref }}
   cinnamon:
-    if: github.event.inputs.job_name == 'cinnamon' || contains(${{ github.ref }}, 'cinnamon')
+    if: github.event.inputs.job_name == 'cinnamon'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Cinnamon
