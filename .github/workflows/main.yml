@@ -11,14 +11,9 @@ on:
         default: 'commerce'
         required: true
       environment:
-        type: environment
-        description: Select the environment
-      boolean:
-        type: boolean
-        description: True or False
-      choice:
         type: choice
-        description: Make a choice
+        description: Select the environment
+        default: 'QA'
         options:
         - QA
         - DEV
