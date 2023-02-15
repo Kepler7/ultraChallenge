@@ -7,9 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       job_name:
+        type: choice
         description: 'Job to be run'
         default: 'commerce'
         required: true
+        options:
+        - commerce
+        - cinnamon
       environment:
         type: choice
         description: Select the environment
