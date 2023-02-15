@@ -12,14 +12,14 @@ on:
         required: true
 jobs:
   commerce:
-    if: github.event.inputs.job_name == 'commerce' || contains(GITHUB_HEAD_REF, 'commerce')
+    if: github.event.inputs.job_name == 'commerce' || contains(${{ env.GITHUB_HEAD_REF }}, 'commerce')
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Commerce
     steps:
         - run: echo $(date +%Y)
   cinnamon:
-    if: github.event.inputs.job_name == 'cinnamon' || contains(GITHUB_HEAD_REF, 'cinnamon')
+    if: github.event.inputs.job_name == 'cinnamon' || contains(${{ env.GITHUB_HEAD_REF }}, 'cinnamon')
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Cinnamon
