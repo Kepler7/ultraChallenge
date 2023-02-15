@@ -10,6 +10,19 @@ on:
         description: 'Job to be run'
         default: 'commerce'
         required: true
+      environment:
+        type: environment
+        description: Select the environment
+      boolean:
+        type: boolean
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - QA
+        - DEV
+        - PROD
 jobs:
   commerce:
     if: github.event.inputs.job_name == 'commerce'
@@ -19,6 +32,7 @@ jobs:
     steps:
         - run: echo $(date +%Y)
         - run: echo ${{ github.ref }}
+        - run: echo ${{  github.event.inputs.environment }}
   cinnamon:
     if: github.event.inputs.job_name == 'cinnamon'
     timeout-minutes: 60
@@ -27,3 +41,4 @@ jobs:
     steps:
         - run: echo $(date +%Y)
         - run: echo ${{ github.ref }}
+        - run: echo ${{  github.event.inputs.environment }}
