@@ -24,17 +24,7 @@ on:
         - PROD
 jobs:
 
-  completeJob:
-    if: github.event.inputs.job_name == ' '
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    name: Complete Job
-    steps:
-        - run: echo $(date +%Y)
-        - run: echo ${{ github.ref }}
-        - run: echo ${{  env.ENVIRONMENT }}
-          env:
-            ENVIRONMENT: QA
+  
   commerce:
     if: github.event.inputs.job_name == 'commerce'
     timeout-minutes: 60
