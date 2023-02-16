@@ -9,7 +9,7 @@ on:
       job_name:
         type: choice
         description: 'Job to be run'
-        default: 'commerce'
+        default: commerce
         required: true
         options:
         - commerce
@@ -17,7 +17,7 @@ on:
       environment:
         type: choice
         description: Select the environment
-        default: 'QA'
+        default: QA
         options:
         - QA
         - DEV
