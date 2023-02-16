@@ -34,7 +34,7 @@ jobs:
         - run: echo ${{ github.ref }}
         - run: echo ${{  env.ENVIRONMENT }}
           env:
-            ENVIRONMENT: ${{ github.event.inputs.environment }}
+            ENVIRONMENT: QA
   commerce:
     if: github.event.inputs.job_name == 'commerce'
     timeout-minutes: 60
