@@ -31,7 +31,9 @@ jobs:
     steps:
         - run: echo $(date +%Y)
         - run: echo ${{ github.ref }}
-        - run: echo ${{  github.event.inputs.environment }}
+        - run: echo ${{  env.ENVIRONMENT }}
+          env:
+            ENVIRONMENT: ${{ github.event.inputs.environment }}
   cinnamon:
     if: github.event.inputs.job_name == 'cinnamon'
     timeout-minutes: 60
@@ -40,4 +42,6 @@ jobs:
     steps:
         - run: echo $(date +%Y)
         - run: echo ${{ github.ref }}
-        - run: echo ${{  github.event.inputs.environment }}
+        - run: echo ${{  env.ENVIRONMENT }}
+          env:
+            ENVIRONMENT: ${{ github.event.inputs.environment }}
